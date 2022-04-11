@@ -31,3 +31,40 @@ MASM writes FPU registers as ST(0), ST(1), etc.
 
 
 NASM treats labels case-sensitively; MASM is case-insensitive.
+
+
+
+
+There are many object file formats. Some you should know about include
+
+
+OMF: used in DOS but has 32-bit extensions for Windows. Old.
+
+AOUT: used in early Linux and BSD variants
+
+COFF: "Common object file format"
+
+Win, Win32: Microsoft’s version of COFF, not exactly the same! Replaces OMF.
+
+Win64: Microsoft’s format for Win64.
+
+ELF, ELF32: Used in modern 32-bit Linux and elsewhere
+
+ELF64: Used in 64-bit Linux and elsewhere
+
+macho32: NeXTstep/OpenStep/Rhapsody/Darwin/macOS 32-bit
+
+macho64: NeXTstep/OpenStep/Rhapsody/Darwin/macOS 64-bit
+
+The NASM documentation has great descriptions of these.
+
+You’ll need to get a linker that (1) understands the object file formats you produce, and (2) can write executables for the operating systems you want to run code on.
+
+Some linkers out there include
+
+LINK.EXE, for Microsoft operating systems.
+
+
+which exists on all Unix systems; Windows programmers get this in any gcc distribution.
+
+
